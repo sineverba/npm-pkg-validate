@@ -1,6 +1,6 @@
 {
-  "name": "validate",
-  "version": "1.0.0",
+  "name": "@sineverba/validate",
+  "version": "1.0.1",
   "description": "Validates a string, useful for forms",
   "main": "dist/index.js",
   "repository": {
