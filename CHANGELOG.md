@@ -1,4 +1,7 @@
-# 1.0.1
+# Next version
++ Upgrade dependencies
+
+## 1.0.1
 + Fix NPM publish
 
 ## 1.0.0
