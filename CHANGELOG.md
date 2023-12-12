@@ -1,4 +1,4 @@
-# Next version
+# 1.1.0
 + Upgrade dependencies
 + Disable ok for domain with single letter (minimum 2)
 
