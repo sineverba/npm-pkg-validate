@@ -14,8 +14,14 @@ describe("Test validate", () => {
     expect(result).toBe(true);
   });
 
-  it("Should return fase if input is not a valid email", () => {
+  it("Should return false if input is not a valid email", () => {
     var invalidEmail = "infoexample.com";
+    var result = validate(invalidEmail);
+    expect(result).toBe(false);
+  });
+
+  it("Should return false if domains has only one char", () => {
+    var invalidEmail = "info@example.a";
     var result = validate(invalidEmail);
     expect(result).toBe(false);
   });

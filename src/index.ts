@@ -7,7 +7,7 @@ export const validate = (inputString: string) => {
   if (!inputString) {
     throw new Error("Missing inputString");
   }
-  const test = /^\S+@\S+\.\S+$/.exec(String(inputString).toLowerCase());
+  const test = /^\S+@\S+\.\S{2,}/.exec(String(inputString).toLowerCase());
   if (test && test.length > 0) {
     return true;
   }
