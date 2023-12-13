@@ -9,20 +9,34 @@ describe("Test validate", () => {
     expect(() => validate()).toThrow(Error);
   });
   it("Should return true if input is a valid email", () => {
-    var validEmail = "info@example.com";
-    var result = validate(validEmail);
+    const validEmail = "info@example.com";
+    const result = validate(validEmail);
     expect(result).toBe(true);
   });
 
   it("Should return false if input is not a valid email", () => {
-    var invalidEmail = "infoexample.com";
-    var result = validate(invalidEmail);
+    const invalidEmail = "infoexample.com";
+    const result = validate(invalidEmail);
     expect(result).toBe(false);
   });
 
   it("Should return false if domains has only one char", () => {
-    var invalidEmail = "info@example.a";
-    var result = validate(invalidEmail);
+    const invalidEmail = "info@example.a";
+    const result = validate(invalidEmail);
+    expect(result).toBe(false);
+  });
+
+  it("Should accept an external regex to accept alphanumeric and underscore", () => {
+    const inputString = "qwerty1234_";
+    const externalRegex = /^[a-zA-Z0-9_]+$/;
+    const result = validate(inputString, true, externalRegex);
+    expect(result).toBe(true);
+  });
+
+  it("Should accept an external regex to validate alphanumeric and underscore", () => {
+    const inputString = "qwerty1234_-";
+    const externalRegex = /^[a-zA-Z0-9_]+$/;
+    const result = validate(inputString, true, externalRegex);
     expect(result).toBe(false);
   });
 });
