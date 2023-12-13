@@ -10,7 +10,9 @@
 
 Useful in forms.
 
-For the moment, it validates only email. In a future, I would add others controls (e.g. lenght, required, etc etc),
+It validates an email or against an external regular expression.
+
+You can pass a second parameter as true to use a third parameter as regular expression.
 
 ## Installation
 `npm install @sineverba/validate`
@@ -22,6 +24,7 @@ import { validate } from "@sineverba/validate";
 
 console.log(validate("info@example.com")); // It prints true
 console.log(validate("infoexample.com")); // It prints false
+console.log(validate("qwerty1234_", true, /^[a-zA-Z0-9_]+$/)); // It prints true, accept only alfphanumeric and underscore
 ```
 
 ## Tests
