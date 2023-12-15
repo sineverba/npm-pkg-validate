@@ -1,4 +1,7 @@
-# 1.2.0
+# Next version
++ Upgrade dependencies
+
+## 1.2.0
 + Add external regex
 
 ## 1.1.0
