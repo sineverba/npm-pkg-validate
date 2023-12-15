@@ -39,4 +39,18 @@ describe("Test validate", () => {
     const result = validate(inputString, true, externalRegex);
     expect(result).toBe(false);
   });
+
+  it("Should accept an external regex to accept alphanumeric and underscore - different regex, return true", () => {
+    const inputString = "qwerty1234_";
+    const externalRegex = /^\w+$/;
+    const result = validate(inputString, true, externalRegex);
+    expect(result).toBe(true);
+  });
+
+  it("Should accept an external regex to accept alphanumeric and underscore - different regex, return false", () => {
+    const inputString = "qwerty1234_-";
+    const externalRegex = /^\w+$/;
+    const result = validate(inputString, true, externalRegex);
+    expect(result).toBe(false);
+  });
 });
